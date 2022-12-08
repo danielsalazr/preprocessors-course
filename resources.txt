@@ -1,0 +1,58 @@
+epositorio del curso
+    -https://github.com/daywalkerhn/platzi-games-pug-publico
+
+estado de tecnologias mas utilizadas
+    -https://2021.stateofcss.com/en-US/technologies/pre-post-processors/
+    -https://2020.stateofcss.com/es-ES/technologies/css-frameworks/
+    -https://2020.stateofcss.com/es-ES/technologies/methodologies/
+    -https://2020.stateofcss.com/es-ES/technologies/css-in-js/
+    -https://2020.stateofcss.com/es-ES/resources/
+
+css modules:
+    -https://github.com/css-modules/css-modules
+
+BEM
+    -https://getbem.com/introduction/
+    -https://platzi.com/blog/bem/
+    -https://9elements.com/bem-cheat-sheet/
+    -https://en.bem.info/methodology/quick-start/#contents
+    -https://scalablecss.com/bem-nesting-grandchild-elements/
+
+guias para creacion y mantenimiento de codigo
+    -https://polaris.shopify.com/
+    -https://www.lightningdesignsystem.com/
+    -https://atlassian.design/
+
+    Anidaciones, no utilizar mas de un nivel:
+    Incorrecto:
+
+    html body div div .descripcion {
+        color: #212121;
+    }
+    Maximo:
+
+    div .descripcion {
+        color: #212121;
+    }
+    Lo mejor que se puede hacer:
+
+    .descripcion {
+        color: #212121;
+    }
+
+Herramientas de compilacion
+
+    -https://codekitapp.com/  // para mac
+    -https://prepros.io/        //windows linux y mac, este es el qu se usa en el curso
+
+    -https://marketplace.visualstudio.com/items?itemName=Wscats.eno
+    -https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented
+    -https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass
+
+Pug
+    pug es un preprocesador de HTML
+    -https://pugjs.org/api/getting-started.html
+
+SASS
+    Cheatsheet
+        -https://devhints.io/sass

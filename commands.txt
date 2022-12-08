@@ -1,0 +1,49 @@
+Selectores CSS:
+
+    Selector universal * Sirve para agregar estilos a todos los elementos de la página. Normalmente se utiliza para hacer “reset” de estilos.
+    Selector etiqueta. Aplica estilos a todos los elementos de ese tipo (p, h1, header etc.)
+    Selector id. Aplica estilos a un elemento único con ese Id, se recomienda hacer buen uso de este selector.
+    Selector clase. Aplica estilos a todos los elementos con esa clase (el que más vas a usar).
+    Selector anidado. Aplica estilos a un elementos descendientes de otros elementos (no necesario que sea hijo directo).
+    Selector hijo >. Aplica estilos a los elementos que sean hijos directos de otros.
+    Selector adyacente +. Aplica estilos al elemento adyacente.
+    Selector de atributo input[type=“number”]. Aplica estilos al elemento con el atributo especificado.
+    La prioridad de un selector se determina por la suma de su contenido:
+
+    ID = 100
+    Clase = 10
+    Etiqueta = 1
+    A mayor la suma, mayor prioridad.
+
+    !important es un valor especial tiene un valor de un millón, nunca lo uses a menos que sea tu única opción como cuando no tienes acceso al código fuente.
+
+
+BEM 
+    el objetivo es dividir lógicamente las piezas de las que se compone una web.
+
+    BEM establece que debemos usar clases para nuestro selectores, clases que se dividen en:
+
+    -Bloques: Los bloques son nuestros contenedores más grandes que a su vez contienen elementos u otros bloques.
+    -Elemento: Los elementos siempre forman parte de un bloque, normalmente son los botones, textos, imágenes etc.
+    -Modificadores: Los modificadores se usan para establecer estilos diferentes a un mismo bloque o elemento.
+
+    uso:
+        -.bloque__element--modificador{}
+
+Instalar Pug
+    -Si quieres utilizar pug sin prepros y por terminal debes:
+
+    Instalarlo
+        -npm i pug-cli -g
+    Compilar
+        -pug -w --pretty landing.pug
+
+Utilizar Pug
+    -insertamos la carpeta en prepros (software que descargamos)
+
+
+Instalar SASS
+    -npm install -g sass
+
+compilar SASS
+    -sass --watch ejercicio-sass.scss ejercicio-sass.css
