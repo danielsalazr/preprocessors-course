@@ -1,0 +1,110 @@
+// los sitios web por lo general tienen
+// 3 colores o 4, si no se va a ver comoun arcoiris
+// 2 o 3 fuentes de tipografia, aqui se utiliza lato para contenido, oswal para los titulo
+
+
+// los colores se meten por lo general en variables 
+
+//Fuentes 
+$Fuente1: 'Lato', sans-serif;
+$Fuente2: 'Oswald', sans-serif;
+
+//colores
+$color-primario: #333333;
+$color-claro: #ffffff;
+$color-secundario: #8841DA;
+$color-variacion:#3f579a;
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	font-family: $Fuente1;
+}
+
+main{
+	display: flex;
+	width: 100%;
+	height: 100vh;
+}
+
+.perfil {
+	width: 50%;
+	padding-top: 50px;
+	color: $color-claro;
+	background-color: $color-secundario;
+
+	// .perfil__avatar {
+	// 	display: block;
+	// 	margin: 0 auto;
+	// 	border-radius: 50em;
+	// }
+
+	// Con ampersand le decimos que lo siguiente
+	//es lo mismo que decir .perfil__avatar{}
+	&__avatar {
+		display: block;
+		margin: 0 auto;
+		border-radius: 50em;
+	}
+
+	&__nombre {
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 20px;
+		font-family: $Fuente2;
+	}
+
+	&__titulo {
+		display:block;
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 700;
+		font-size: 12px;
+	}
+
+	&__boton {
+		display: block;
+		width: 100px;
+		height: 40px;
+        margin: 15px auto;
+		padding-top: 15px ;
+		border-radius: 20px;
+		text-decoration: none;
+		text-transform: uppercase;
+		text-align: center;
+		font-family: $Fuente2;
+		color: $color-claro;
+	}
+
+}
+
+.estadistica--perfil{
+    display: flex;
+    width: 50%;
+    height: 90px;
+    padding-top: 15px;
+    margin: 0 auto;
+    justify-content: space-around;
+    border-radius: 20px;
+	background-color: $color-claro;
+
+    h3{
+        font-weight: 600;
+        font-size: 20px;
+        text-align: center;
+        text-transform: uppercase;
+		font-family: $Fuente2;
+    }
+
+    span {
+        font-size: 12px;
+        text-align: center;
+        text-transform: uppercase;
+		font-family: $Fuente2;
+    }
+}
+
+

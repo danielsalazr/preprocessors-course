@@ -1,0 +1,39 @@
+// los sitios web por lo general tienen
+// 3 colores o 4, si no se va a ver comoun arcoiris
+// 2 o 3 fuentes de tipografia, aqui se utiliza lato para contenido, oswal para los titulo
+
+
+// los colores se meten por lo general en variables 
+
+//Fuentes 
+$Fuente1: 'Lato', sans-serif;
+$Fuente2: 'Oswald', sans-serif;
+
+//colores
+$color-primario: #333333;
+$color-claro: #ffffff;
+$color-secundario: #8841DA;
+$color-variacion:#3f579a;
+
+@mixin caja {
+	color: $color-primario;
+	background-color: $color-claro;
+	border-radius: 20px;
+	box-shadow: 0px 20px 33px 0px rgba(0,0,0,0.50);
+}
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	font-family: $Fuente1;
+}
+
+main{
+	display: flex;
+	width: 100%;
+	height: 100vh;
+}
+

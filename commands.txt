@@ -47,3 +47,182 @@ Instalar SASS
 
 compilar SASS
     -sass --watch ejercicio-sass.scss ejercicio-sass.css
+
+uso de sass
+
+    para evitar que el preprocesador compile el archiv
+    creamos el archivo con "_" al inicio del _nombre
+
+    ej:
+        _globales.scss
+        _estadistica.scss
+        _perfil.scss
+
+    elementos anidados: sass permite anidar componentes hijos
+
+        .perfil {
+            width: 50%;
+            padding-top: 50px;
+            // .perfil__avatar {
+            // 	display: block;
+            // }
+
+            // Con ampersand le decimos que lo siguiente
+            //es lo mismo que decir .perfil__avatar{}
+            &__avatar {
+                display: block;
+            }
+
+            &__nombre {
+                text-transform: uppercase;
+                text-align: center;
+            }
+        }
+
+    variables: es posible utilizar variables
+
+        //Fuentes 
+        $Fuente1: 'Lato', sans-serif;
+        $Fuente2: 'Oswald', sans-serif;
+
+        //colores
+        $color-primario: #333333;
+        $color-claro: #ffffff;
+        $color-secundario: #8841DA;
+        $color-variacion:#3f579a;
+
+        body{
+            margin: 0;
+            font-family: $Fuente1;
+        }
+
+        .ubicacion--perfil{
+            width: 50%;
+            height: 90px;
+            background-color: $color-claro;
+            color: #333333;
+
+            i{
+                display: block;
+                color: $color-variacion;
+            }
+
+            h2 {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 20px;
+                font-family: $Fuente2;
+            }
+
+            h3 {
+                text-transform: uppercase;
+                font-size: 12px;
+                font-family: $Fuente2;
+            }
+        }
+
+    Herencia: Tambien es posible es posible heredar para conservar los estilos de otro bloque
+
+        .perfil__minibio {
+            margin: 0 auto;
+            padding-top: 20px;
+
+            h2 {
+                @extend .perfil__nombre;
+            }
+
+            h3 {
+                @extend .perfil__titulo;
+            }
+
+        }
+    
+    Modularizar: con import podemos hacer modulos
+         llevamos el contenido del archivo a una carpeta e importamos en 
+         el archivo principal para obtener los estilo
+
+        @import "../componentes/globales.scss";
+        @import "../componentes/perfiles";
+        @import "../componentes/estadisticas";
+        @import "../componentes/ubicaciones";
+
+
+    Mixin: los mixin son bloques de codigo que reutilizaremos dentro del proyecto
+    para ocasionar que elestilo en los elementos se repita
+
+        En el archivo global declaramos el mixin
+
+        @mixin caja {
+            color: $color-primario;
+            background-color: $color-claro;
+            border-radius: 20px;
+            box-shadow: 0px 20px 33px 0px rgba(0,0,0,0.50);
+        }
+
+        ahora para llevarlo a los componentes lo llamamos con @include
+
+        .ubicacion--perfil{
+            width: 50%;
+            height: 90px;
+            margin: 30px auto;
+            padding: 20px 0 0 50px;
+            // border-radius: 20px;
+            // background-color: $color-claro;
+            // color: #333333;
+            @include caja;
+        }
+
+
+    Funciones :
+    
+        podemos crear funciones en el global de la siguiente forma
+
+        @function get-opacity($color, $nivel){
+
+            @return rgba($color, $nivel);
+        }
+
+        ahora en los demas archivos llamamos nuestra funcion
+
+        &__titulo {
+            display:block;
+            text-transform: uppercase;
+            color: get-opacity($color-claro, .50);
+        }
+
+        &__boton {
+            display: block;
+            width: 100px;
+            color: get-opacity($color-primario, 0.20);
+            border: 2px solid get-opacity($color-claro, 0.30);
+        }
+
+    Condicionales:
+        @mixin titulos($fuente) {
+            @if ($fuente == $Fuente1){
+                font-family: $Fuente1;
+            } @else {
+                font-family: $Fuente2;
+                text-transform: uppercase;
+            }
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 20px;
+            @include titulos($Fuente2);
+        }
+            
+
+    Loops:
+        los loops en sass no requieren ser llamados
+
+        //esto aplicara para todos los h1, h2 y h3 del proyecto
+        @each $header, $size in (h1:30px, h2:25px, h3:20px){
+            #{$header} {
+                font-size: $size;
+                margin: 0;
+            }
+        }

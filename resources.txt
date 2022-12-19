@@ -8,6 +8,9 @@ estado de tecnologias mas utilizadas
     -https://2020.stateofcss.com/es-ES/technologies/css-in-js/
     -https://2020.stateofcss.com/es-ES/resources/
 
+SASS Documentation
+    -https://sass-lang.com/documentation/variables
+
 css modules:
     -https://github.com/css-modules/css-modules
 
@@ -52,6 +55,9 @@ Herramientas de compilacion
 Pug
     pug es un preprocesador de HTML
     -https://pugjs.org/api/getting-started.html
+
+editor de disenio para interfases:
+    -https://zeplin.io/
 
 SASS
     Cheatsheet

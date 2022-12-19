@@ -1,0 +1,2 @@
+El tamanio de los font awesome
+se cambia con font size y no con width y height
